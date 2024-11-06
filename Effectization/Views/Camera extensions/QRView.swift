@@ -56,7 +56,7 @@ struct ContentView67: View {
                         // Action for "My QR" button (present a My QR view or generate user's QR)
                         dismiss()
                     }) {
-                        Text("")
+                        Text("Back")
                             .font(.headline)
                             .foregroundColor(.black)
                             .padding()
