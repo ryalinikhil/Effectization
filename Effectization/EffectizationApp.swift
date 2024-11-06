@@ -12,8 +12,8 @@ struct EffectizationApp: App {
 
     var body: some Scene {
         WindowGroup {
-            //HomeView()
-            TabBarView()
+            HomeView()
+            //TabBarView()
         }
     }
 }
