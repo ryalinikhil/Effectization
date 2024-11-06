@@ -10,9 +10,10 @@ import SwiftUI
 struct MainView: View {
     @State private var selectedCategory: WorkoutCategory? = nil
     @Binding var showTabBar: Bool
-
+    @State private var isContentView67Presented = false
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
         ZStack{
             Color.black
                 .ignoresSafeArea()
@@ -27,9 +28,12 @@ struct MainView: View {
                                     .foregroundColor(Color.green)
                             }
                             Spacer()
-                            NavigationLink(
-                                destination: ContentView67(showTabBar: $showTabBar)
-                            ) {
+                           // NavigationLink(
+                             //   destination: ContentView67(showTabBar: $showTabBar)
+                        Button(action: {
+                                                isContentView67Presented.toggle()
+                                            })
+                             {
                                 ZStack{
                                     blur24()
                                     Image(systemName: "viewfinder")
@@ -53,6 +57,9 @@ struct MainView: View {
                     
                     Spacer()
                     }
+                .fullScreenCover(isPresented: $isContentView67Presented) {
+                               ContentView67(showTabBar: $showTabBar)
+                           }
                 }
             }
         }
